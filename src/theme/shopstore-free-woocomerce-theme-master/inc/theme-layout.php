@@ -65,29 +65,22 @@ function shopstore_header_container_middle(){
 <div class="header-middle">
 <div class="container">
     <div class="row">
-        <div class="col-md-">
+        <div class="col-md-3">
             <div id="logo" class="logo">
-			<?php
-            if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-            the_custom_logo();
-            }else{
-            ?>	
-                <h1 class="logo site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title"><?php bloginfo( 'name' ); ?></a></h1>
-                <?php $description = get_bloginfo( 'description', 'display' );
-                if ( $description || is_customize_preview() ) : ?>
-                    <div class="site-description"><?php echo esc_html($description); ?></div>
-                <?php endif; ?>
-            <?php }?>  
+                <img src="<?php echo esc_url( get_template_directory_uri() );?>/assets/img/logo1.png" id="logotipo" alt="">
 
             </div><!-- /#logo -->
         </div><!-- /.col-md-3 -->
 		<?php
-        /**
-        * Hook - shopstore_top_product_search 		- 10
-        * @hooked shopstore_top_product_search
-        */
-        do_action( 'shopstore_top_product_search' );
-        ?> 
+                        wp_nav_menu( array(
+                            'theme_location'    => 'primary',
+                            'depth'             => 3,
+                            'menu_class'  		=> 'menu rd-navbar-nav',
+                            'container'			=>'ul',
+                            'walker' => new shopstore_Navwalker(),
+							'fallback_cb'       => 'shopstore_Navwalker::fallback',
+                        ) );
+                        ?>
         <div class="col-md-3">
             <div class="box-icon-cart">
                

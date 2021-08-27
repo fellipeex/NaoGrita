@@ -203,16 +203,19 @@ ul, ol {
 	margin:0px;
 }
 
-img {
-	max-width:100%;
+#logotipo {
+	min-width: 70px;
+	max-width: 120px;
 	height:auto;
 }
-
+img {
+	max-width: 100%;
+	height:auto;
+}
 b, strong {
 	font-weight:900;
 }
 
-uttonb,
 button:hover {
 	border:none;
 }
@@ -706,10 +709,9 @@ ul.flat-unstyled li > ul > li > a {
 .header-middle .grid-left #logo {
 	margin-bottom:0px;
 }
-
 .header-middle .logo.style1 {
 	float:left;
-	width:23%;
+	width:10%;
 	margin-right:0px;
 }
 
