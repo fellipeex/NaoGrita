@@ -1,0 +1,17 @@
+wordpress:
+    image: wordpress
+    links:
+     - mariadb:mysql
+    environment:
+     - WORDPRESS_DB_PASSWORD=06199700ZoiR$
+    ports:
+     - "85:85"
+    volumes:
+     - ./html:/var/www/html
+mariadb:
+    image: mariadb:10.0.33
+    environment:
+     - MYSQL_ROOT_PASSWORD=06199700ZoiR$    
+     - MYSQL_DATABASE=dbnaogrita
+    volumes:
+     - ./db:/var/lib/mysql
